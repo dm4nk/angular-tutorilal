@@ -26,8 +26,13 @@ export class ProductDetailsComponent implements OnInit {
     );
   }
 
-  addToCart(product: Product): void {
+  addToCart(product: Product) {
     this.cartService.addToCart(product);
+    window.alert('Your product has been added to the cart!');
+  }
+
+  contains(product: Product): Boolean {
+    return this.cartService.contains(product);
   }
 
   product: Product | undefined;
